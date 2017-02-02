@@ -11,24 +11,16 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class LoginTest extends TestBase {
-    private LoginPage loginPage;
+    //private LoginPage page;
+    private LoginView page = new LoginView();
 
-    public LoginTest() {
-        loginPage = PageFactory.initElements(driver, LoginPage.class);
-    }
-
-    @Test
-    public void validLoginTest1() {
-        openBrowser();
-        loginPage.login("eu@fast.com", "eu.pass");
-    }
-
+    //public LoginTest() {page = PageFactory.initElements(driver, LoginPage.class);}
 
     @Test
     public void validLoginTest() {
         openBrowser();
 
-        loginPage.login("eu@fast.com", "eu.pass");
+        page.login("eu@fast.com", "eu.pass");
 
         try {
             WebElement logoutBtn = driver.findElement(By.linkText("Logout"));
@@ -41,7 +33,7 @@ public class LoginTest extends TestBase {
     @Test
     protected void invalidPasswordTest() {
         openBrowser();
-        loginPage.login("eu@fast.com", "eu.pass123");
+        page.login("eu@fast.com", "eu.pass123");
 
         WebElement errorElement = driver.findElement(By.className("error-msg"));
         System.out.println(errorElement.getText());
