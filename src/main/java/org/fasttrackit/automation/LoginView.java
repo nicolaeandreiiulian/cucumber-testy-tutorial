@@ -10,6 +10,5 @@ public class LoginView {
         emailField.sendKeys(email);
         passwordField.sendKeys(password);
         loginBtn.click();
-
     }
 }

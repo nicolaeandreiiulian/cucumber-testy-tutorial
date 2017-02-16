@@ -5,14 +5,13 @@ import com.sdl.selenium.web.WebLocator;
 import com.sdl.selenium.web.form.CheckBox;
 import com.sdl.selenium.web.utils.Utils;
 import org.fasttrackit.util.TestBase;
-import org.junit.Test;
+import org.testng.annotations.Test;
+
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class ElementsTest extends TestBase{
-
-    private LoginView loginView = new LoginView();
 
     private CheckBox stopProcessCheckbox = new CheckBox().setElPath("/html/body/form[1]/div[3]/label/input");
     private CheckBox labelWidthEnterCheckbox = new CheckBox().setElPath("/html/body/form[1]/div[4]/label/input");
@@ -47,4 +46,7 @@ public class ElementsTest extends TestBase{
         assertThat ("Stop the process is not selected!", stopProcessCheckbox.isSelected(), is(true));
         assertThat ("Label with Enter!", labelWidthEnterCheckbox.isSelected(), is(true));
     }
+
+
+
 }
