@@ -19,6 +19,14 @@ public class ElementsTest extends TestBase{
     private WebLocator stopProcessLabel = new WebLocator().setText("Stop the process?", SearchType.TRIM);
     private WebLocator widthEnterLabel = new WebLocator().setText("Label with Enter", SearchType.TRIM, SearchType.CHILD_NODE);
 
+    public static void main (String[] args){
+        ElementsTest test = new ElementsTest();
+        System.out.println(test.stopProcessLabel.getSelector());
+        System.out.println(test.widthEnterLabel.getSelector());
+        System.out.println(test.stopProcessCheckbox.getSelector());
+        System.out.println(test.labelWidthEnterCheckbox.getSelector());
+    }
+
     @Test
     public void checkboxesTest(){
         openLoginPage();
@@ -38,10 +46,5 @@ public class ElementsTest extends TestBase{
 
         assertThat ("Stop the process is not selected!", stopProcessCheckbox.isSelected(), is(true));
         assertThat ("Label with Enter!", labelWidthEnterCheckbox.isSelected(), is(true));
-
-
     }
-
-
-
 }
